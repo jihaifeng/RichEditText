@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RichEditText.iml" filepath="$PROJECT_DIR$/RichEditText.iml" />
+      <module fileurl="file://E:\A_JHF_Study\WorkSpace\android_studio\RichEditText-master\RichEditText.iml" filepath="E:\A_JHF_Study\WorkSpace\android_studio\RichEditText-master\RichEditText.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RichEditText-master.iml" filepath="$PROJECT_DIR$/RichEditText-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

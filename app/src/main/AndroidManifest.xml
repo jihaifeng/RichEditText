@@ -20,7 +20,7 @@
     </activity>
     <activity
         android:name=".richText.RichActivity"
-        android:windowSoftInputMode="stateVisible|adjustResize"
+        android:windowSoftInputMode="adjustResize"
         />
 
     <activity android:name=".Redit.RActivity"/>

@@ -61,6 +61,11 @@
     <View
         android:background="#ff00ff"
         style="@style/horizontal_line_normal"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/rcv"
+        android:visibility="gone"
+        android:layout_height="@dimen/dp_280"/>
   </LinearLayout>
   <!-- 底部菜单 -->
 

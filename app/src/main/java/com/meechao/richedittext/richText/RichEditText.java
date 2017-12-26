@@ -241,20 +241,15 @@ public class RichEditText extends android.support.v7.widget.AppCompatEditText {
           objPreEnd = mRObjectsList.get(i - 1).getEndIndex();
         }
 
-        int objNextStart = -1;
-        //if (i == mRObjectsList.size() - 1) {
-          objNextStart = mRObjectsList.get(i).getStartIndex();
-        //} else {
-        //  objNextStart = mRObjectsList.get(i + 1).getStartIndex();
-        //}
-        if (selectionStart == objPreEnd){
+        int objNextStart = mRObjectsList.get(i).getStartIndex();
+        if (selectionStart == objPreEnd) {
           editable.insert(selectionStart, " ");
-          setSelection(selectionStart+1);
+          setSelection(selectionStart + 1);
         }
 
-        if (selectionStart  == objNextStart ){
+        if (selectionStart == objNextStart) {
           editable.insert(selectionStart, " ");
-          setSelection(selectionStart-1);
+          setSelection(selectionStart - 1);
         }
       }
       //1.设置object起始位置

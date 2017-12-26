@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"/>
+
+    <Button
+        android:id="@+id/btn_topic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="addTag"/>
+
+    <Button
+        android:id="@+id/btn_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="setTag"/>
+  </LinearLayout>
+  <!-- 内容 -->
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:background="@color/color_f5f5f7"
+      android:orientation="vertical">
+
+    <View
+        android:background="#ff00ff"
+        style="@style/horizontal_line_normal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+      <com.meechao.richedittext.richText.RichEditText
+          android:id="@+id/rich_edit"
+          view:object_background_color="#FFD0AAF2"
+          view:object_foreground_color="#ab86cc"
+          style="@style/rich_editText"/>
+
+      <include
+          layout="@layout/view_keyboard_change"
+          android:id="@+id/keyboard_change_view"/>
+
+    </LinearLayout>
+
+    <View
+        android:background="#ff00ff"
+        style="@style/horizontal_line_normal"/>
+  </LinearLayout>
+  <!-- 底部菜单 -->
+
+</RelativeLayout>

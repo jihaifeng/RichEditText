@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+  <RadioGroup
+      android:id="@+id/rg_keyboard"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center_vertical"
+      android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/rb_keybord_left"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:background="@drawable/selector_keyboard_expression"
+        style="@style/keybord_radioButton"/>
+
+    <RadioButton
+        android:id="@+id/rb_keybord_right"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/selector_keyboard"
+        android:checked="true"
+        style="@style/keybord_radioButton"/>
+
+    <RadioButton
+        android:id="@+id/rb_send"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        style="@style/keyboard_send_btn"
+        />
+  </RadioGroup>
+</RelativeLayout>

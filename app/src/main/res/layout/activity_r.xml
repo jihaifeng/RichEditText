@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+    <com.meechao.richedittext.Redit.REditText
+        xmlns:view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minLines="5"
+        view:object_background_color="#FFD0AAF2"
+        view:object_foreground_color="#ab86cc"/>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"/>
+  </LinearLayout>
+  <!-- 内容 -->
+
+  <RelativeLayout
+      android:id="@+id/menu"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_alignParentBottom="true">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:background="#c9c8c8"/>
+    <!-- 分割线 -->
+
+    <ImageView
+        android:id="@+id/pick_image_iv"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/compose_toolbar_picture"/>
+    <!-- 选择图片 -->
+
+    <ImageView
+        android:id="@+id/topic_iv"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@id/pick_image_iv"
+        android:src="@drawable/compose_toolbar_topic"/>
+    <!-- 话题 -->
+
+    <TextView
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="14dp"
+        android:background="#f5bc9d"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="4dp"
+        android:text="发送"
+        android:textColor="#ffffff"/>
+    <!-- 发送 -->
+
+  </RelativeLayout>
+  <!-- 底部菜单 -->
+
+</RelativeLayout>

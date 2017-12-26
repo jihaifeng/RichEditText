@@ -1,0 +1,76 @@
+<resources>
+
+  <!--
+      Base application theme, dependent on API level. This theme is replaced
+      by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+  -->
+  <style name="AppBaseTheme" parent="android:Theme.Light">
+    <!--
+        Theme customizations available in newer API levels can go in
+        res/values-vXX/styles.xml, while customizations related to
+        backward-compatibility can go here.
+    -->
+  </style>
+
+  <!-- Application theme. -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+  </style>
+
+  <!-- RichEditText输入框的样式-->
+  <style name="rich_editText">
+    <item name="android:layout_marginLeft">@dimen/dp_15</item>
+    <item name="android:layout_marginRight">@dimen/dp_15</item>
+    <item name="android:layout_marginTop">@dimen/dp_5</item>
+    <item name="android:layout_marginBottom">@dimen/dp_5</item>
+    <item name="android:layout_weight">1</item>
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:background">@drawable/shape_edit_comment_bg</item>
+    <item name="android:padding">@dimen/dp_7</item>
+  </style>
+
+  <!--键盘切换的按钮样式-->
+  <style name="keybord_radioButton">
+    <item name="android:button">@null</item>
+    <item name="android:layout_marginTop">@dimen/dp_20</item>
+    <item name="android:layout_marginBottom">@dimen/dp_20</item>
+    <item name="android:layout_width">@dimen/dp_28</item>
+    <item name="android:layout_height">@dimen/dp_28</item>
+  </style>
+  <!--键盘切换右侧发送按钮-->
+  <style name="keyboard_send_btn">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">@dimen/dp_28</item>
+    <item name="android:paddingLeft">@dimen/dp_6</item>
+    <item name="android:paddingRight">@dimen/dp_6</item>
+    <item name="android:text">发送</item>
+    <item name="android:includeFontPadding">false</item>
+    <item name="android:button">@null</item>
+    <item name="android:textSize">@dimen/sp_15</item>
+    <item name="android:textColor">@android:color/white</item>
+    <item name="android:background">@drawable/shape_round_blue_2dp</item>
+  </style>
+
+  <style name="horizontal_line_normal">
+    <item name="android:background">#f6f6f9</item>
+    <item name="android:layout_height">@dimen/dp_1</item>
+    <item name="android:layout_width">match_parent</item>
+  </style>
+
+  <style name="customCommentEditText">
+    <item name="android:maxHeight">@dimen/dp_90</item>
+    <item name="android:textColor">@color/color_333333</item>
+    <item name="android:textSize">@dimen/sp_14</item>
+    <item name="android:minHeight">@dimen/dp_30</item>
+    <item name="android:textColorHint">@color/color_aab2bd</item>
+    <item name="android:paddingLeft">@dimen/dp_5</item>
+    <item name="android:paddingRight">@dimen/dp_5</item>
+    <item name="android:layout_marginRight">@dimen/dp_10</item>
+    <item name="android:background">@drawable/shape_edit_comment_bg</item>
+    <item name="android:layout_weight">1</item>
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+</resources>

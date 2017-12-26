@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">@android:color/black</color>
+  <color name="colorPrimaryDark">@android:color/black</color>
+  <color name="colorAccent">#FF14CFB2</color>
+  <color name="white">#FFFFFFFF</color>
+
+  <color name="orange">#e8c124</color>
+  <color name="mine_bg_color">#FFDAD9E2</color>
+  <color name="verification_gray">#FFF6F6F9</color>
+  <color name="user_desc_gray">#AAB2BD</color>
+  <color name="light_gray">#FFDAD9E2</color>
+  <color name="gray">#5F5D70</color>
+  <color name="dark_gray">#5F5D70</color>
+
+  <color name="red">#E77069</color>
+
+  <color name="light_black">#35343D</color>
+  <color name="half_transparent">#7dffffff</color>
+  <color name="custom_transparent">#3cffffff</color>
+  <color name="light_blue">#FF14CFB2</color>
+  <color name="light_blue_blur">#9aecdf</color>
+  <color name="article_num_bg">#5F5D70</color>
+  <color name="blur_transparent">#7dd5c6c6</color>
+
+  <color name="color_b0000000">#50000000</color>
+  <color name="color_b9bfc8">#B9BFC8</color>
+  <color name="color_14cfb2">#14CFB2</color>
+  <color name="color_7d14cfb2">#7d14cfb2</color>
+  <color name="color_f5f5f5">#f5f5f5</color>
+  <color name="color_5f5d70">#5F5D70</color>
+  <color name="color_c85f5d70">#c85f5d70</color>
+  <color name="color_dad9e2">#DAD9E2</color>
+  <color name="color_aab2bd">#AAB2BD</color>
+  <color name="color_00ca9d">#00CA9D</color>
+  <color name="color_35343d">#35343D</color>
+  <color name="color_333333">#333333</color>
+  <color name="color_f6f6f9">#F6F6F9</color>
+  <color name="color_f9f9f9">#fff9f9f9</color>
+  <color name="color_f4f4f4">#fff4f4f4</color>
+  <color name="color_ff5959">#ff5959</color>
+  <color name="color_7d000000">#7d000000</color>
+  <color name="color_c8607d8b">#c8607d8b</color>
+  <color name="color_03a94">#03A9F4</color>
+  <color name="color_aa78909c">#aa78909c</color>
+  <color name="color_78909c">#78909c</color>
+  <color name="color_b8bfc8">#B8BFC8</color>
+  <color name="color_2961ab">#2961ab</color>
+  <color name="color_e9eef6">#E9EEF6</color>
+  <color name="color_2ddba0">#ff2ddba0</color>
+  <color name="color_f5f5f7">#f5f5f7</color>
+
+  <color name="item_626073">#626073</color>
+  <color name="item_999999">#999999</color>
+  <color name="item_333333">#333333</color>
+  <color name="item_f6f6f9">#f6f6f9</color>
+  <color name="item_477aac">#477aac</color>
+  <color name="item_b2b9c3">#b2b9c3</color>
+  <color name="item_5f5d70">#5f5d70</color>
+  <color name="item_aab2bd">#aab2bd</color>
+  <color name="item_fafafa">#fafafa</color>
+  <color name="item_e77069">#e77069</color>
+  <color name="item_dad9e2">#dad9e2</color>
+  <color name="item_fdfdfe">#fdfdfe</color>
+  <color name="item_2961ab">#2961ab</color>
+  <color name="item_78909c">#78909c</color>
+
+  <color name="item_607d8b_cd">#cd607d8b</color>
+  <color name="item_000000_85">#85000000</color>
+</resources>

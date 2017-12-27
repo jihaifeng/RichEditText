@@ -1,4 +1,4 @@
-package com.meechao.richedittext.rv;
+package com.meechao.richedittext.pageRcv;
 
 /**
  * Created by zhuguohui on 2016/11/15.

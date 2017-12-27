@@ -27,6 +27,7 @@
 
     <RadioButton
         android:id="@+id/rb_send"
+        android:visibility="gone"
         android:layout_marginEnd="@dimen/dp_20"
         android:layout_marginRight="@dimen/dp_20"
         style="@style/keyboard_send_btn"

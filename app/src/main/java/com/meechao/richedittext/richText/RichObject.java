@@ -13,8 +13,8 @@ public class RichObject extends RObject {
 
   // s = #天气[1|话题]#
   public static final String REG_ID = "(?<=\\[)(\\d+)(?=|)"; // 获取标签id ，如 1
-  public static final String REG_TEXT = "(?<=\\|)(.+)(?=\\|)"; // 获取 标签类别 ，如 话题
-  public static final String REG_TYPE = "(?<=#)(.+)(?=\\[)"; // 获取 标签内容，不包括前后# ,如 天气
+  public static final String REG_TEXT = "(?<=#)(.+)(?=\\[)"; // 获取 标签类别 ，如 话题
+  public static final String REG_TYPE = "(?<=\\|)(.+)(?=\\|)"; // 获取 标签内容，不包括前后# ,如 天气
 
   private String topicContent;// 话题文本  #天气[1|话题]#
   private int topicId;

@@ -1,4 +1,4 @@
-package com.meechao.richedittext.rv;
+package com.meechao.richedittext.pageRcv;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

@@ -1,4 +1,4 @@
-package com.meechao.richedittext.rv;
+package com.meechao.richedittext.pageRcv;
 
 import android.content.Context;
 import android.content.res.TypedArray;

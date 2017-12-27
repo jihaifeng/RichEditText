@@ -15,11 +15,10 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.meechao.richedittext.KeyboardUtils;
 import com.meechao.richedittext.MyAdapter;
 import com.meechao.richedittext.R;
-import com.meechao.richedittext.rv.HorizontalPageLayoutManager;
-import com.meechao.richedittext.rv.PagingScrollHelper;
+import com.meechao.richedittext.pageRcv.HorizontalPageLayoutManager;
+import com.meechao.richedittext.pageRcv.PagingScrollHelper;
 import com.meechao.richedittext.utils.DisplayUtils;
 import com.meechao.richedittext.utils.InputMethodUtils;
 

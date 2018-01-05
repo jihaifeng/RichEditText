@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- REditText -->
-    <declare-styleable name="REditText">
-        <attr name="object_foreground_color" format="color" />
-        <attr name="object_background_color" format="color" />
-    </declare-styleable>
+  <!-- REditText -->
+  <declare-styleable name="REditText">
+    <attr format="color" name="object_foreground_color"/>
+    <attr format="color" name="object_background_color"/>
+  </declare-styleable>
+
+  <!-- RichEditText -->
+  <declare-styleable name="TEditText">
+    <!--话题标签文字颜色 未选中-->
+    <attr format="color" name="text_color_normal_topic"/>
+    <!--话题标签文字颜色 选中-->
+    <attr format="color" name="text_color_select_topic"/>
+    <!--话题标签的文字大小-->
+    <attr format="dimension" name="text_size_topic"/>
+    <!--标签匹配正则-->
+    <attr format="string" name="topic_regex"/>
+
+  </declare-styleable>
 
 </resources>

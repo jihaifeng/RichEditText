@@ -26,7 +26,7 @@ import java.util.List;
  * @author Ruffian
  */
 public class RichEditText extends android.support.v7.widget.AppCompatEditText {
-
+  private static final String TAG = RichEditText.class.getSimpleName().trim();
   // 默认,话题文本高亮颜色
   private static final int FOREGROUND_COLOR = Color.parseColor("#FF8C00");
   // 默认,话题背景高亮颜色
@@ -91,7 +91,10 @@ public class RichEditText extends android.support.v7.widget.AppCompatEditText {
      * 1.当文字内容产生变化的时候实时更新UI
      */
     this.addTextChangedListener(new TextWatcher() {
+      int s1;
+
       @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        s1 = s.length();
       }
 
       @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -100,6 +103,9 @@ public class RichEditText extends android.support.v7.widget.AppCompatEditText {
       @Override public void afterTextChanged(final Editable s) {
         // 文字改变刷新UI
         refreshEditTextUI(s.toString());
+        if (s1 > s.length()) {
+          setSelectionText();
+        }
       }
     });
 
@@ -172,6 +178,60 @@ public class RichEditText extends android.support.v7.widget.AppCompatEditText {
     });
   }
 
+  private void setSelectionText() {
+    int selectionStart = getSelectionStart();
+    int selectionEnd = getSelectionEnd();
+
+    /**
+     * 如果光标起始和结束不在同一位置,删除文本
+     */
+
+    if (selectionStart != selectionEnd) {
+      // 查询文本是否属于目标对象,若是移除列表数据
+      Log.i("mRObjectsList", "mRObjectsList obj: " + JSON.toJSONString(mRObjectsList));
+      String targetText = getText().toString().substring(selectionStart, selectionEnd);
+      for (int i = 0; i < mRObjectsList.size(); i++) {
+        RichObject object = mRObjectsList.get(i);
+        if (selectionStart == object.getStartIndex() && selectionEnd == object.getEndIndex()) {
+          Log.i("mRObjectsList", "mRObjectsList obj i: " + i);
+          mRObjectsList.remove(object);
+        }
+      }
+      return;
+    }
+
+    //int lastPos = 0;
+    Editable editable = getText();
+    // 遍历判断光标的位置
+    for (int i = 0; i < mRObjectsList.size(); i++) {
+      RichObject object = mRObjectsList.get(i);
+      String objectText = object.getTopicContent();
+
+      Log.i("setOnKeyListener", String.format(
+          "i： %s  \nlastPos: %s  \nselectionStart: %s  \nselectionStart >= object.getStartIndex():  %s  "
+              + "\nobjectText.length ()： "
+              + "%s "
+              + "\nelectionStart <= (object.getStartIndex() "
+              + "+ objectText.length()： %s  ", i, object.getStartIndex(), selectionStart,
+          selectionStart >= object.getStartIndex(), objectText.length(),
+          selectionStart <= (object.getStartIndex() + objectText.length())));
+
+      try {
+        if (selectionStart != 0 && selectionStart >= object.getStartIndex() && selectionStart <= (object.getStartIndex()
+            + objectText.length())) {
+          // 选中话题
+          setSelection(object.getStartIndex(), object.getStartIndex() + objectText.length());
+          // 设置背景色
+          editable.setSpan(new BackgroundColorSpan(mBackgroundColor), object.getStartIndex(),
+              object.getStartIndex() + objectText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+          return;
+        }
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
   /**
    * EditText内容修改之后刷新UI
    *
@@ -214,6 +274,41 @@ public class RichEditText extends android.support.v7.widget.AppCompatEditText {
     editable.setSpan(new AbsoluteSizeSpan(16, true), lastObjIndex, content.length(),
         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     Log.i("mRObjectsList", "mRObjectsList obj: " + JSON.toJSONString(mRObjectsList));
+  }
+
+  @Override public boolean dispatchKeyEvent(KeyEvent event) {
+    Log.i(TAG, "dispatchKeyEvent: ");
+    return super.dispatchKeyEvent(event);
+  }
+
+  @Override public boolean onKeyUp(int keyCode, KeyEvent event) {
+    Log.i(TAG, "onKeyUp: ");
+    return super.onKeyUp(keyCode, event);
+  }
+
+  @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
+    Log.i(TAG, "onKeyDown: ");
+    return super.onKeyDown(keyCode, event);
+  }
+
+  @Override public boolean onKeyLongPress(int keyCode, KeyEvent event) {
+    Log.i(TAG, "onKeyLongPress: ");
+    return super.onKeyLongPress(keyCode, event);
+  }
+
+  @Override public boolean onKeyPreIme(int keyCode, KeyEvent event) {
+    Log.i(TAG, "onKeyPreIme: ");
+    return super.onKeyPreIme(keyCode, event);
+  }
+
+  @Override public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
+    Log.i(TAG, "onKeyMultiple: ");
+    return super.onKeyMultiple(keyCode, repeatCount, event);
+  }
+
+  @Override public boolean onKeyShortcut(int keyCode, KeyEvent event) {
+    Log.i(TAG, "onKeyShortcut: ");
+    return super.onKeyShortcut(keyCode, event);
   }
 
   /**

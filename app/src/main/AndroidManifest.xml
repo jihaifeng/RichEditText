@@ -24,6 +24,10 @@
         />
 
     <activity android:name=".Redit.RActivity"/>
+
+
+    <activity android:name=".MainActivity2"/>
+    <activity android:name=".MainActivity1"/>
   </application>
 
 </manifest>

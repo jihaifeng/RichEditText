@@ -9,7 +9,7 @@
       android:layout_height="wrap_content"
       android:orientation="vertical">
 
-    <com.meechao.richedittext.Redit.REditText
+    <com.meechao.richedittext.Redit.CopyOfREditText
         xmlns:view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/edittext"
         android:layout_width="match_parent"

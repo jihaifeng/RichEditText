@@ -11,7 +11,7 @@ import java.util.List;
 
 public class RActivity extends Activity implements OnClickListener {
 
-  private REditText mREditText;
+  private CopyOfREditText mREditText;
   private TextView mResult;
 
   @Override
@@ -23,7 +23,7 @@ public class RActivity extends Activity implements OnClickListener {
   }
 
   public void initViews() {
-    mREditText = (REditText) findViewById(R.id.edittext);
+    mREditText = (CopyOfREditText) findViewById(R.id.edittext);
     mResult = (TextView) findViewById(R.id.result);
     findViewById(R.id.topic_iv).setOnClickListener(this);
     findViewById(R.id.send).setOnClickListener(this);

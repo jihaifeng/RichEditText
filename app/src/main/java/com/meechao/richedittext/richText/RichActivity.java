@@ -4,8 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
-import android.view.MotionEvent;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -14,18 +16,16 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-
 import com.meechao.richedittext.MyAdapter;
 import com.meechao.richedittext.R;
 import com.meechao.richedittext.pageRcv.HorizontalPageLayoutManager;
 import com.meechao.richedittext.pageRcv.PagingScrollHelper;
 import com.meechao.richedittext.utils.DisplayUtils;
 import com.meechao.richedittext.utils.InputMethodUtils;
-
 import java.util.List;
 
 public class RichActivity extends Activity {
-
+    private static final String TAG = RichActivity.class.getSimpleName().trim();
     private RichEditText mREditText;
     private TextView mResult;
     private Button btnTopic, btnSet;
@@ -45,6 +45,19 @@ public class RichActivity extends Activity {
     @SuppressLint("ClickableViewAccessibility")
     public void initViews() {
         mREditText = (RichEditText) findViewById(R.id.rich_edit);
+        mREditText.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                Log.i(TAG, "beforeTextChanged: ");
+            }
+
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                Log.i(TAG, "onTextChanged: ");
+            }
+
+            @Override public void afterTextChanged(Editable s) {
+                Log.i(TAG, "afterTextChanged: ");
+            }
+        });
         mResult = (TextView) findViewById(R.id.result);
         btnTopic = (Button) findViewById(R.id.btn_topic);
         btnSet = (Button) findViewById(R.id.btn_set);
@@ -71,21 +84,9 @@ public class RichActivity extends Activity {
                 }
             }
         });
-        mREditText.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_UP) {
-                    InputMethodUtils.setKeyboardShowing(true);
-                    if (isEmotionPanelShowing()) {
-                        mEmotionPanel.postDelayed(mHideEmotionPanelTask, 500);
-                    }
-                }
-                return false;
-            }
-        });
 
-//        InputMethodUtils.detectKeyboard(this);
-//        InputMethodUtils.enableCloseKeyboardOnTouchOutside(this);
+        InputMethodUtils.detectKeyboard(this);
+        InputMethodUtils.enableCloseKeyboardOnTouchOutside(this);
 
         btnSet.setOnClickListener(new OnClickListener() {
             @Override
@@ -217,6 +218,38 @@ public class RichActivity extends Activity {
             params.height = keyboardHeight;
             mEmotionPanel.setLayoutParams(params);
         }
+    }
+
+
+    @Override public boolean onKeyUp(int keyCode, KeyEvent event) {
+        Log.i(TAG, "onKeyUp: ");
+        return super.onKeyUp(keyCode, event);
+    }
+
+    @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Log.i(TAG, "onKeyDown: ");
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override public boolean onKeyLongPress(int keyCode, KeyEvent event) {
+        Log.i(TAG, "onKeyLongPress: ");
+        return super.onKeyLongPress(keyCode, event);
+    }
+
+    @Override public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
+        Log.i(TAG, "onKeyMultiple: ");
+        return super.onKeyMultiple(keyCode, repeatCount, event);
+    }
+
+    @Override public boolean onKeyShortcut(int keyCode, KeyEvent event) {
+        Log.i(TAG, "onKeyShortcut: ");
+        return super.onKeyShortcut(keyCode, event);
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        Log.i(TAG, "dispatchKeyEvent: ");
+        return super.dispatchKeyEvent(event);
     }
 
 }
